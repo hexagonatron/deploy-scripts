@@ -48,7 +48,6 @@ if [[ $ssh -eq 1 ]]; then
     read -r ssh_pub<~/.ssh/id_rsa.pub
     ssh -T $user@$remote<< EOF 
         sudo iocage console $jail_name
-        echo "In jail"
         echo "sshd_enable=YES" >> /etc/rc.conf
         service sshd start
         echo "$pass" | pw user add -n "$user" -s csh -m -h 0
