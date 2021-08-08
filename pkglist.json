@@ -1,0 +1,10 @@
+{
+    "pkgs": [
+        "vim",
+        "nginx",
+        "git",
+        "screen",
+        "nano",
+        "avahi"
+    ]
+}
