@@ -46,6 +46,10 @@ if [[ $ssh -eq 1 ]]; then
         fi
     done
     read -r ssh_pub<~/.ssh/id_rsa.pub
+
+    # Creates SSH user and adds key to authorized keys.
+    # Script will not give user su access. to enable run command:
+    # pw usermod $user -G wheel
     ssh -T $user@$remote<< EOF 
         sudo iocage console $jail_name
         echo "sshd_enable=YES" >> /etc/rc.conf
